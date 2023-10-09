@@ -1,3 +1,4 @@
+import math
 import flet as ft
 from flet import (
     Column,
@@ -17,11 +18,11 @@ class CalculatorApp(UserControl):
         self.reset()
         self.result = Text(value="0", color=colors.WHITE, size=50,)
 
-        return Container(
+        return ft.Container(
             width=300,
-            height=450,
-            bgcolor=colors.BLUE_400,
-            border_radius=border_radius.all(10),
+            height=440,
+            bgcolor=colors.CYAN_700,
+            border_radius=border_radius.all(20),
             padding=20,
             content=Column(
                 controls=[
@@ -29,6 +30,9 @@ class CalculatorApp(UserControl):
                     Row(
                         controls=[
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="C",
                                 bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
@@ -38,6 +42,9 @@ class CalculatorApp(UserControl):
                                 data="AC",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="+/-",
                                 bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
@@ -47,6 +54,9 @@ class CalculatorApp(UserControl):
                                 data="+/-",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="%",
                                 bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
@@ -56,6 +66,9 @@ class CalculatorApp(UserControl):
                                 data="%",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="/",
                                 bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
@@ -69,6 +82,9 @@ class CalculatorApp(UserControl):
                     Row(
                         controls=[
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="7",
                                 bgcolor=colors.ORANGE_50,
                                 color=colors.BLACK,
@@ -79,6 +95,9 @@ class CalculatorApp(UserControl):
                                 data="7",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="8",
                                 bgcolor=colors.ORANGE_50,
                                 color=colors.BLACK,
@@ -89,6 +108,9 @@ class CalculatorApp(UserControl):
                                 data="8",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="9",
                                 bgcolor=colors.ORANGE_50,
                                 color=colors.BLACK,
@@ -99,6 +121,9 @@ class CalculatorApp(UserControl):
                                 data="9",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="*",
                                 bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
@@ -113,6 +138,9 @@ class CalculatorApp(UserControl):
                     Row(
                         controls=[
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="4",
                                 bgcolor=colors.ORANGE_50,
                                 color=colors.BLACK,
@@ -123,16 +151,22 @@ class CalculatorApp(UserControl):
                                 data="4",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="5",
                                 bgcolor=colors.ORANGE_50,
                                 color=colors.BLACK,
                                 expand=1,
-                                 on_click=self.button_clicked,
+                                on_click=self.button_clicked,
                                 width=100,
                                 height=60,
                                 data="5",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="6",
                                 bgcolor=colors.ORANGE_50,
                                 color=colors.BLACK,
@@ -143,6 +177,9 @@ class CalculatorApp(UserControl):
                                 data="6",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="-",
                                 bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
@@ -157,6 +194,9 @@ class CalculatorApp(UserControl):
                     Row(
                         controls=[
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="1",
                                 bgcolor=colors.ORANGE_50,
                                 color=colors.BLACK,
@@ -167,6 +207,9 @@ class CalculatorApp(UserControl):
                                 data="1",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="2",
                                 bgcolor=colors.ORANGE_50,
                                 color=colors.BLACK,
@@ -177,6 +220,9 @@ class CalculatorApp(UserControl):
                                 data="2",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="3",
                                 bgcolor=colors.ORANGE_50,
                                 color=colors.BLACK,
@@ -187,6 +233,9 @@ class CalculatorApp(UserControl):
                                 data="3",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="+",
                                 bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
@@ -201,6 +250,9 @@ class CalculatorApp(UserControl):
                     Row(
                         controls=[
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="0",
                                 bgcolor=colors.ORANGE_50,
                                 color=colors.BLACK,
@@ -211,6 +263,9 @@ class CalculatorApp(UserControl):
                                 data="0",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text=".",
                                 bgcolor=colors.ORANGE_50,
                                 color=colors.BLACK,
@@ -221,8 +276,11 @@ class CalculatorApp(UserControl):
                                 data=".",
                             ),
                             ElevatedButton(
+                                style=ft.ButtonStyle(
+                                    shape=ft.RoundedRectangleBorder(radius=5)
+                                ),
                                 text="=",
-                                bgcolor=colors.BLUE,
+                                bgcolor=colors.PINK_300,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -310,7 +368,8 @@ class CalculatorApp(UserControl):
         self.new_operand = True
 
 
-def main(page: Page):
+def main(page: ft.Page):
+
     page.title = "Calc App"
 
     page.window_width = 330
@@ -320,10 +379,12 @@ def main(page: Page):
 
     calc = CalculatorApp()
     row = ft.Row(
+        expand=True,
         alignment=ft.MainAxisAlignment.CENTER,
         controls=[
             calc
         ]
+
     )
 
 
