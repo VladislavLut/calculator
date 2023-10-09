@@ -1,4 +1,4 @@
-import flet
+import flet as ft
 from flet import (
     Column,
     Container,
@@ -15,13 +15,12 @@ from flet import (
 class CalculatorApp(UserControl):
     def build(self):
         self.reset()
-        self.result = Text(value="0", color=colors.WHITE, size=50)
-
+        self.result = Text(value="0", color=colors.WHITE, size=50,)
 
         return Container(
             width=300,
             height=450,
-            bgcolor=colors.GREY,
+            bgcolor=colors.BLUE_400,
             border_radius=border_radius.all(10),
             padding=20,
             content=Column(
@@ -31,7 +30,7 @@ class CalculatorApp(UserControl):
                         controls=[
                             ElevatedButton(
                                 text="C",
-                                bgcolor=colors.RED,
+                                bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -40,7 +39,7 @@ class CalculatorApp(UserControl):
                             ),
                             ElevatedButton(
                                 text="+/-",
-                                bgcolor=colors.RED,
+                                bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -49,7 +48,7 @@ class CalculatorApp(UserControl):
                             ),
                             ElevatedButton(
                                 text="%",
-                                bgcolor=colors.RED,
+                                bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -58,7 +57,7 @@ class CalculatorApp(UserControl):
                             ),
                             ElevatedButton(
                                 text="/",
-                                bgcolor=colors.RED,
+                                bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -101,7 +100,7 @@ class CalculatorApp(UserControl):
                             ),
                             ElevatedButton(
                                 text="*",
-                                bgcolor=colors.RED,
+                                bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -128,7 +127,7 @@ class CalculatorApp(UserControl):
                                 bgcolor=colors.ORANGE_50,
                                 color=colors.BLACK,
                                 expand=1,
-                                on_click=self.button_clicked,
+                                 on_click=self.button_clicked,
                                 width=100,
                                 height=60,
                                 data="5",
@@ -145,7 +144,7 @@ class CalculatorApp(UserControl):
                             ),
                             ElevatedButton(
                                 text="-",
-                                bgcolor=colors.RED,
+                                bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -189,7 +188,7 @@ class CalculatorApp(UserControl):
                             ),
                             ElevatedButton(
                                 text="+",
-                                bgcolor=colors.RED,
+                                bgcolor=colors.DEEP_PURPLE_500,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -314,11 +313,21 @@ class CalculatorApp(UserControl):
 def main(page: Page):
     page.title = "Calc App"
 
+    page.window_width = 330
+    page.window_height = 490
+
+
 
     calc = CalculatorApp()
+    row = ft.Row(
+        alignment=ft.MainAxisAlignment.CENTER,
+        controls=[
+            calc
+        ]
+    )
 
 
-    page.add(calc)
+    page.add(row)
 
 
-flet.app(target=main)
+ft.app(target=main)
