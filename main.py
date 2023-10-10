@@ -1,4 +1,3 @@
-import math
 import flet as ft
 from flet import (
     Column,
@@ -21,7 +20,7 @@ class CalculatorApp(UserControl):
         return ft.Container(
             width=300,
             height=440,
-            bgcolor=colors.CYAN_700,
+            bgcolor=colors.BLACK26,
             border_radius=border_radius.all(20),
             padding=20,
             content=Column(
@@ -34,7 +33,7 @@ class CalculatorApp(UserControl):
                                     shape=ft.RoundedRectangleBorder(radius=5)
                                 ),
                                 text="C",
-                                bgcolor=colors.DEEP_PURPLE_500,
+                                bgcolor=colors.WHITE10,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -46,7 +45,7 @@ class CalculatorApp(UserControl):
                                     shape=ft.RoundedRectangleBorder(radius=5)
                                 ),
                                 text="+/-",
-                                bgcolor=colors.DEEP_PURPLE_500,
+                                bgcolor=colors.WHITE10,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -58,7 +57,7 @@ class CalculatorApp(UserControl):
                                     shape=ft.RoundedRectangleBorder(radius=5)
                                 ),
                                 text="%",
-                                bgcolor=colors.DEEP_PURPLE_500,
+                                bgcolor=colors.WHITE10,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -70,7 +69,7 @@ class CalculatorApp(UserControl):
                                     shape=ft.RoundedRectangleBorder(radius=5)
                                 ),
                                 text="/",
-                                bgcolor=colors.DEEP_PURPLE_500,
+                                bgcolor=colors.WHITE10,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -125,7 +124,7 @@ class CalculatorApp(UserControl):
                                     shape=ft.RoundedRectangleBorder(radius=5)
                                 ),
                                 text="*",
-                                bgcolor=colors.DEEP_PURPLE_500,
+                                bgcolor=colors.WHITE10,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -181,7 +180,7 @@ class CalculatorApp(UserControl):
                                     shape=ft.RoundedRectangleBorder(radius=5)
                                 ),
                                 text="-",
-                                bgcolor=colors.DEEP_PURPLE_500,
+                                bgcolor=colors.WHITE10,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
@@ -237,7 +236,7 @@ class CalculatorApp(UserControl):
                                     shape=ft.RoundedRectangleBorder(radius=5)
                                 ),
                                 text="+",
-                                bgcolor=colors.DEEP_PURPLE_500,
+                                bgcolor=colors.WHITE10,
                                 color=colors.WHITE,
                                 expand=1,
                                 on_click=self.button_clicked,
